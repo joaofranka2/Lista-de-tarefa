@@ -36,3 +36,19 @@ class ListaDeTarefas {
 
 // Exemplo de uso
 const lista = new ListaDeTarefas();
+
+lista.incluirTarefa(new Tarefa("organizar relatório semanal", "murilo", "Contabilidade", 5));
+lista.incluirTarefa(new Tarefa("reavaliar proposta de projeto", "julia", "Desenvolvimento", 4));
+lista.incluirTarefa(new Tarefa("marcar reunião com cliente", "rafael", "Vendas", 3));
+
+lista.adicionarDetalhe(0, 'valor', 200.00);
+lista.adicionarDetalhe(1, 'duracao', "3 horas");
+
+lista.excluirTarefaConcluida(2);
+
+const tarefasOrdenadasPorImportancia = lista.listarTarefasPorImportancia();
+
+console.log("Lista de Tarefas por Ordem de Importância:");
+tarefasOrdenadasPorImportancia.forEach((descricao, indice) => {
+    console.log(`${indice + 1}. ${descricao}`);
+});
